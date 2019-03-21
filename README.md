@@ -2,13 +2,14 @@
 
 `imgprepper` is a Python script that will take your list of image files, then resize, rename and optimise their size, saving them in a directory of your choice.
 
-Design your resize options in a preset in `job.py`.
+Design your resize options as individual presets in `job.py`.
 
 It is built using Pillow and ImageOptim-CLI.
 
 ### Requirements
 
 * Python 3.7+ &mdash; untested on below, not compatible with Python 2)
+* [`Pillow for Python`](https://pillow.readthedocs.io/en/stable/) &mdash; image processing library
 * [`ImageOptim for Mac`](https://imageoptim.com/mac) &mdash; the free open-source GUI
 * [`imageoptim-cli`](https://github.com/JamieMason/ImageOptim-CLI) &mdash; installed as a regular command line utility for your system
 
@@ -63,3 +64,6 @@ i Running ImageOptim...
 ### Development to-do
 
 * Offer an option to just use standard ImageOptim.app for MacOS.
+* Define JPEG quality settings in job.py/Presets instead of hardcoding them.
+* Test with PNG files and see what happens.
+* Separate my personal job.py and create an example job.py for download
