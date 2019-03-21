@@ -8,8 +8,9 @@ It is built using Pillow and ImageOptim-CLI.
 
 ### Requirements
 
+* macOS &mdash; tested on 10.14.3. Necessary because of ImageOptim being Mac only.
 * Python 3.7+ &mdash; untested on below, not compatible with Python 2)
-* [`Pillow for Python`](https://pillow.readthedocs.io/en/stable/) &mdash; image processing library
+* [Pillow for Python](https://pillow.readthedocs.io/en/stable/) &mdash; image processing library
 * [`ImageOptim for Mac`](https://imageoptim.com/mac) &mdash; the free open-source GUI
 * [`imageoptim-cli`](https://github.com/JamieMason/ImageOptim-CLI) &mdash; installed as a regular command line utility for your system
 
