@@ -1,46 +1,46 @@
+# DEPRECATED
+
 TARGET_PRESETS = [
     {
         'action': 'resize',
         'width': 1280,
         'nameFormat': '{name}.{ext}',
-        'directory': '/Users/seb/Development/image_preparation/script-output/'
+        'directory': '/Users/seb/Development/image_preparation/script-output-eg'
     },
     {
         'action': 'resize',
         'width': 940,
         'nameFormat': '{name},w_940.{ext}',
-        'directory': '/Users/seb/Development/image_preparation/script-output/sizes'
+        'directory': '/Users/seb/Development/image_preparation/script-output-eg'
     },
     {
         'action': 'resize',
         'width': 627,
         'nameFormat': '{name},w_627.{ext}',
-        'directory': '/Users/seb/Development/image_preparation/script-output/sizes'
+        'directory': '/Users/seb/Development/image_preparation/script-output-eg'
     }
 ]
 
 
 LIST_OF_FILE_PATHS = """
 
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3233.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3234.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3355.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3442.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3438.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3420.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3707.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3704.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3657.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3688.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3511.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3515.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3456.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3467.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3419.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3373.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3394.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3306.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3273.jpg
-/Users/seb/Pictures/photo_exports_mac/2019-03-15 Hellen Alvarado/Selects/sebastian-reategui-2019-03-15-hellen-alvarado-3434.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3890.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3906.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3909.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3915.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3926.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3937.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3951.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3958.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3959.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3961.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3963.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3987.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3988.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_3991.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_4000.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_4007.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_4016.jpg
+/Users/seb/Pictures/photo_exports_mac/2019-03-22 Calle 100/Starred/SEB_4058.jpg
 
 """

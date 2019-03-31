@@ -1,8 +1,10 @@
 import os
 import time
 import subprocess
+import argparse
 
-from PIL import Image, ImageFilter
+from PIL import Image
+import yaml
 
 
 class ImageObject:
@@ -68,14 +70,30 @@ class ImageOptim:
 
 #######
 
-import job
+parser = argparse.ArgumentParser()
+parser.add_argument( "PRESETS_PATH", help="path to a YAML file with your presets", type=str)
+args = parser.parse_args()
 
-TARGET_PRESETS = job.TARGET_PRESETS
-SOURCE_FILES = job.LIST_OF_FILE_PATHS.strip().splitlines()
+
+if args.PRESETS_PATH:
+    pass
+else:
+    raise Exception('Run the script again, including the path to your YAML file containing presets')
+
+if os.path.isfile(args.PRESETS_PATH):
+    presets_file = open(args.PRESETS_PATH, 'r')
+else:
+    raise FileNotFoundError('Could not find this file). Check the path for typos?\n' + args.PRESETS_PATH)
+
+presets_data = yaml.safe_load(presets_file)
+
+TARGET_PRESETS = presets_data['presets']
+SOURCE_FILES = presets_data['file_paths'].strip().splitlines()
 
 #######
 
 objects = [ ImageObject(f) for f in SOURCE_FILES ]
+
 
 def createDirectories():
     # Create directories, so there are no missing directory errors thrown

@@ -2,7 +2,7 @@
 
 `imgprepper` is a Python script that will take your list of image files, then resize, rename and optimise their size, saving them in a directory of your choice.
 
-Design your resize options as individual presets in `job.py`.
+Design your resize options as individual presets in a YAML file.
 
 It is built using Pillow and ImageOptim-CLI.
 
@@ -16,7 +16,7 @@ It is built using Pillow and ImageOptim-CLI.
 
 ### To install
 
-1. Download `imgprepper.py` and `job.py`
+1. Download `imgprepper.py`
 2. If not already installed, install `imageoptim-cli` ([see installation instructions](https://github.com/JamieMason/ImageOptim-CLI#installation)):
 
 ```
@@ -25,29 +25,26 @@ brew install imageoptim-cli
 
 ### To use
 
-1. Edit your `job.py` file according to the following format. At the moment, only `resize` is accepted.
+1. Create a text file using YAML structure (e.g. `presets.yml`) in your text editor, according to the following format:
 
-```python
-TARGET_PRESETS = [
-    {
-        'action': 'resize',
-        'width': 1280,
-        'nameFormat': '{name}_large.{ext}',
-        'directory': '/Users/me/dest'
-    }
-]
+```yaml
+presets:
+  - action: resize
+    width: 1280
+    nameFormat: "{name}_large.{ext}"
+    directory: /Users/me/dest
 
-LIST_OF_FILE_PATHS = """
-
-/Users/me/source/file.jpg
-
-"""
+file_paths: |
+  /Users/me/source/file.jpg
 ```
 
-2. Run the main script: `imgprepper.py`
+* Create as many presets as needed. At the moment, the script will run all of them.
+* **Remember**: indent the file paths with two spaces, in order to have correct YAML formatting.
+
+2. Run the script:
 
 ```
-python imgprepper.py
+python imgprepper.py presets.yml
 ```
 
 3. In your terminal, you'll be given a running log of the resize process. ImageOptim will also present its results at the end.
@@ -65,6 +62,7 @@ i Running ImageOptim...
 ### Development to-do
 
 * Offer an option to just use standard ImageOptim.app for MacOS.
-* Define JPEG quality settings in job.py/Presets instead of hardcoding them.
+* Investigate the actual JPEG compression libraries themselves and consider including them manually, bypassing ImageOptim and ImageOptim-CLI. This could then enable the creation of a standalone binary using PyInstaller.
+* Define JPEG quality settings in Presets.yml instead of hardcoding them.
+* Offer an option to enable/disable certain presets, either by command line or a 'disable' key in YAML.
 * Test with PNG files and see what happens.
-* Separate my personal job.py and create an example job.py for download
