@@ -119,20 +119,24 @@ def processPresets():
 
             if preset['action'] == 'resize':
                 resize = process.resize( preset['width'], outPath )
-                print( '    ' + outFilename,
+                print(
+                    '    ' + outFilename,
                     '| Dimensions: {} x {}'.format( resize['outW'], resize['outH'] ),
                     '| Resize:',
-                    round(resize['time'],3), 's'
+                    round(resize['time'], 3),
+                    's'
                 )
                 TOTAL_FILE_LIST.add(resize['filepath'])
             else:
                 raise Exception('Preset action needs to be set. At the moment, I only accept `resize`.')
     return TOTAL_FILE_LIST
 
+
 def imageOptimDirectories(directories):
     # ImageOptim all the directories listed in the presets
     all_paths = ' '.join( '"{}"'.format(dir) for dir in directories )
     ImageOptim.run(all_paths)
+
 
 def imageOptimFiles(fileList):
     # ImageOptim all the individual paths, separated by space
