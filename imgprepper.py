@@ -31,8 +31,22 @@ class ImageObject:
 
 class Process:
 
-    def __init__(self, object):
+    def __init__(self, object, options):
         self.i = object
+
+        # Set the defaults
+        self.options = {
+            'quality': 85,
+            'resample': 'LANCZOS',
+            'optimize': True
+        }
+        if options is False:
+            # Leave defaults as is
+            pass
+        else:
+            for k, v in options.items():
+                # Update the settings for each option defined in the preset
+                self.options[k] = v
 
     def resize(self, desiredW, targetName):
         sourceW, sourceH = self.i.srcSize
@@ -45,8 +59,15 @@ class Process:
 
         start = time.time()
 
-        out = self.i.PillowImage.resize( outDimen, resample=Image.LANCZOS )
-        out.save(targetName, optimize=True)
+        out = self.i.PillowImage.resize(
+            outDimen,
+            resample=getattr(Image, self.options['resample'])
+        )
+        out.save(
+            targetName,
+            quality=self.options['quality'],
+            optimize=self.options['optimize']
+        )
 
         end = time.time()
 
@@ -111,9 +132,14 @@ def processPresets():
 
         print('Directory out:', preset['directory'])
 
+        if 'options' in preset:
+            options = preset['options']
+        else:
+            options = False
+
         for sourceImg in objects:
             # And then process all images per that preset
-            process = Process(sourceImg)
+            process = Process(sourceImg, options)
             outFilename = preset['nameFormat'].format(name=sourceImg.srcName, ext=sourceImg.srcExt)
             outPath = os.path.join( preset['directory'], outFilename)
 
