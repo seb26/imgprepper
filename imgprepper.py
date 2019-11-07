@@ -140,7 +140,17 @@ def processPresets():
         for sourceImg in objects:
             # And then process all images per that preset
             process = Process(sourceImg, options)
-            outFilename = preset['nameFormat'].format(name=sourceImg.srcName, ext=sourceImg.srcExt)
+
+            # Set the name
+            outName = sourceImg.srcName
+            # Set the file extension
+            # But force TIFFs to be JPG
+            if sourceImg.srcExt == 'tif' or sourceImg.srcExt == 'tiff':
+                outExt = 'jpg'
+            else:
+                outExt = sourceImg.srcExt
+
+            outFilename = preset['nameFormat'].format(name=outName, ext=outExt)
             outPath = os.path.join( preset['directory'], outFilename)
 
             if preset['action'] == 'resize':
